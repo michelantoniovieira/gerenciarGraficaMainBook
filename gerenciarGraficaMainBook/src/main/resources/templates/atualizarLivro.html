@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmls:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Atualizar Cadastro de Livros</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">Cadastro Geral</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+				aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+				<div class="navbar-nav">
+					<a class="nav-link active" aria-current="page" th:href="@{/alunos}">Sistema Gerencial</a>
+				</div>
+			</div>
+		</div>
+	</nav>
+
+<body>
+	<br>
+	<br>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-sm-6 container justify-content-center card">
+				<h1>Atualizar Novo Livro</h1>
+				<div class="card-body">
+					<form th:action="@{/livros/{id} (id=${livro.id})}" th:object="${livro}" method="POST">
+						<div class="form-group">
+							<label>Informe o titulo do livro</label>
+							<input type="text" name="titulo" th:field="*{titulo}" class="form-control"
+								placeholder="Entre com o titulo do livro">
+						</div>
+						<div style="margin-bottom: 10px;"></div>
+						<div class="form-group">
+							<label>Informe o autor do livro</label>
+							<input type="text" name="autor" th:field="*{autor}" class="form-control"
+								placeholder="Entre com o autor do livro">
+						</div>
+						<div style="margin-bottom: 10px;"></div>
+						<div class="form-group">
+							<label>Informe o ISBN</label>
+							<input type="text" name="isbn" th:field="*{isbn}" class="form-control"
+								placeholder="Entre com o codigo ISBN do livro">
+						</div>
+						<div style="margin-bottom: 10px;"></div>
+						<div class="form-group">
+							<label>Informe a editora do livro</label>
+							<input type="text" name="editora" th:field="*{editora}" class="form-control"
+								placeholder="Entre com a editora do livro">
+						</div>
+						<div style="margin-bottom: 10px;"></div>
+						<div class="box-footer">
+							<button type="submit" class="btn btn-success">Enviar</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
